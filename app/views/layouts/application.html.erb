@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/911a8d45ea.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <%= link_to 'Umar Ghouse', root_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to new_post_path, class: 'nav-link' do %>
+              <i class="fas fa-plus-circle fa-2x"></i>
+            <% end %>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark my-2 my-sm-0 rounded-circle" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main">
+      <div class="container my-3">
+        <div id="flash">
+          <%= alerts(notice) %>
+          <%= alerts(alert) %>
+        </div>
+
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="container">
+      <hr>
+      
+      <p>&copy; Umar Ghouse <%= Date.today.year %></p>
+    </footer>
+  </body>
+</html>

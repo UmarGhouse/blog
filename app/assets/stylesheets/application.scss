@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+    @import "bootstrap/scss/bootstrap";
+
+:root {
+    --mainColor: #ff9800;
+    }
+
+body {
+    padding-top: 4rem;
+}
+
+a:not(.navbar-brand, .nav-link, .btn, .page-link, .hero-image, .admin-controls, .breadcrumb-link) {
+    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+    background-size: 1.5px 1.5px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: lighter;
+}
+
+a:hover:not(.navbar-brand, .nav-link, .btn, .page-link, .hero-image, .admin-controls, .breadcrumb-link) {
+    color: #333333;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-size: auto 3px;
+    background-repeat: repeat-x;
+    text-decoration: none;
+}
+
+.fas, .far {
+    color: #333333;
+}
+.fas:hover, .far:hover {
+    color: #ff9800
+}

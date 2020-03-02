@@ -1,0 +1,50 @@
+<div class="row mb-5">
+    <div class="col-md-8 my-auto">
+      <% if @last_post.hero_image.attached? %>
+        <div class="text-center">
+          <%= link_to @last_post, class: 'hero-image' do %>
+            <image src="<%= url_for(@last_post.hero_image) %>" class="img-fluid">
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-4 my-auto">
+      <h1><%= link_to @last_post.title, @last_post %> <span class="badge badge-pill badge-primary">New</span></h1>
+      <p><%= truncate(strip_tags(@last_post.body.to_s), length: 200) %></p>
+      <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@last_post), class: 'admin-controls' %> | 
+      <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @last_post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls' %>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <% @posts.each do |post| %>
+      <div class="row my-5">
+        <div class="col-sm-4">
+          <% if post.hero_image.attached? %>
+            <div class="text-center">
+              <image src="<%= url_for(post.hero_image) %>" class="img-fluid">
+            </div>
+          <% end %>
+        </div>
+
+        <div class="col-sm-8">
+          <h2><%= link_to post.title, post %></h2>
+          <p><%= truncate(strip_tags(post.body.to_s), length: 100) %></p>
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(post), class: 'admin-controls' %> | 
+          <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls' %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= paginate @posts %>
+  </div>
+
+  <div class="col-md-4">
+    <h1>Archive</h1>
+    <% @posts_archive.each do |year, number| %>
+      <%= link_to year.year, archive_path(2020) %> <span class="badge badge-info"><%= number %></span>
+    <% end %>
+  </div>
+</div>
