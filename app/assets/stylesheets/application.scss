@@ -33,6 +33,7 @@ h5,
 h6 {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .trix-content blockquote {
@@ -78,6 +79,7 @@ a:hover:not(.navbar-brand, .nav-link, .btn, .page-link, .hero-image, .admin-cont
 .fas,
 .far {
   color: #333333;
+  font-size: 1.125em;
 }
 .fas:hover,
 .far:hover {

@@ -5,11 +5,11 @@
   </ol>
 </nav>
 
-<h1><%= @post.title.upcase %></h1>
+<h1><%= @post.title %></h1>
 <small class="text-muted"><i class="far fa-clock"></i> <%= local_time(@post.created_at, :short) %></small>
 
-<%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: 'admin-controls' %> | 
-<%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls' %>
+<%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> | 
+<%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Delete' %>
 
 <br>
 

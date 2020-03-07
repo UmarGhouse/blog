@@ -26,4 +26,5 @@ require("@rails/actiontext")
 
 $(document).on('ready turbolinks:load', function () {
     bsCustomFileInput.init();
+    $('[data-toggle="tooltip"]').tooltip();
 })

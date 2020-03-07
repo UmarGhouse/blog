@@ -4,7 +4,7 @@ class PodcastNotesController < ApplicationController
   # GET /podcast_notes
   # GET /podcast_notes.json
   def index
-    @podcast_notes = PodcastNote.all
+    @podcast_notes = PodcastNote.all.order('created_at DESC').page(params[:page])
   end
 
   # GET /podcast_notes/1
