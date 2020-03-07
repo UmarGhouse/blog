@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :podcast_notes
   resources :posts
   get 'posts/archive/:year', to: 'posts#archive', as: 'archive'
 

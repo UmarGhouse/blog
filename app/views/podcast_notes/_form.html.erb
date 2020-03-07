@@ -1,0 +1,27 @@
+<%= form_with(model: podcast_note, local: true) do |form| %>
+  <% if podcast_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(podcast_note.errors.count, "error") %> prohibited this podcast_note from being saved:</h2>
+
+      <ul>
+        <% podcast_note.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :note_body %>
+    <%= form.rich_text_area :note_body, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

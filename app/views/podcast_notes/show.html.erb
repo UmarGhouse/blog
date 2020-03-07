@@ -1,0 +1,19 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to '<i class="fas fa-home"></i>'.html_safe, podcast_notes_path, class: 'breadcrumb-link' %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @podcast_note.title %></li>
+  </ol>
+</nav>
+
+<h1><%= @podcast_note.title %></h1>
+<small class="text-muted"><i class="far fa-clock"></i> <%= local_time(@podcast_note.created_at, :short) %></small>
+
+<%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_podcast_note_path(@podcast_note), class: 'admin-controls' %> | 
+<%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @podcast_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls' %>
+
+<br>
+<br>
+
+<div class="d-flex justify-content-center w-75 mx-auto">
+  <%= @podcast_note.note_body %>
+</div>
