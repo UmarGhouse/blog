@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-sm-8">
-          <h2><%= link_to post.title, post %></h2>
+          <h2><%= link_to post.title.upcase, post %></h2>
           <p><%= truncate(strip_tags(post.body.to_s), length: 100) %></p>
           <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(post), class: 'admin-controls' %> | 
           <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls' %>
