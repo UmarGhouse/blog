@@ -14,44 +14,72 @@
  *= require_self
  */
 
-    @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 :root {
-    --mainColor: #ff9800;
-    }
-
-body {
-    padding-top: 4rem;
-    font-family: 'Comfortaa';
+  --mainColor: #ff9800;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: bold;
+body {
+  padding-top: 4rem;
+  font-family: "Comfortaa";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+
+.trix-content blockquote {
+  position: relative;
+  color: #a3a3a3;
+  font-size: 1.5em;
+  border-color: #a3a3a3;
+  margin-left: 1.5em;
+  line-height: 1.5em;
+
+  &:after {
+    content: "\201D";
+    font-family: "Sanchez", serif;
+    position: absolute;
+    top: 0.28em;
+    right: 0;
+    font-size: 6em;
+    font-style: italic;
+    color: darken(#ffffff, 7%);
+    z-index: -1;
+  }
 }
 
 a:not(.navbar-brand, .nav-link, .btn, .page-link, .hero-image, .admin-controls, .breadcrumb-link) {
-    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
-	background-position: 0 100%;
-	background-repeat: repeat-x;
-    background-size: 1.5px 1.5px;
-    text-decoration: none;
-    color: #333333;
-    font-weight: lighter;
+  background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 1.5px 1.5px;
+  text-decoration: none;
+  color: #333333;
+  font-weight: lighter;
 }
 
 a:hover:not(.navbar-brand, .nav-link, .btn, .page-link, .hero-image, .admin-controls, .breadcrumb-link) {
-    color: #333333;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-    background-position: 0 100%;
-    background-size: auto 3px;
-    background-repeat: repeat-x;
-    text-decoration: none;
+  color: #333333;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-size: auto 3px;
+  background-repeat: repeat-x;
+  text-decoration: none;
 }
 
-.fas, .far {
-    color: #333333;
+.fas,
+.far {
+  color: #333333;
 }
-.fas:hover, .far:hover {
-    color: #ff9800
+.fas:hover,
+.far:hover {
+  color: #ff9800;
 }
