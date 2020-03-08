@@ -8,8 +8,10 @@
 <h1><%= @podcast_note.title %></h1>
 <small class="text-muted"><i class="far fa-clock"></i> <%= local_time(@podcast_note.created_at, :short) %></small>
 
-<%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_podcast_note_path(@podcast_note), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> | 
-<%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @podcast_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Delete' %>
+<% if current_user %>
+  <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_podcast_note_path(@podcast_note), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> | 
+  <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @podcast_note, method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip', placement: 'bottom' }, class: 'admin-controls', title: 'Delete' %>
+<% end %>
 
 <br>
 <br>

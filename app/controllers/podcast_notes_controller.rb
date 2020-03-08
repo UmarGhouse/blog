@@ -1,5 +1,6 @@
 class PodcastNotesController < ApplicationController
   before_action :set_podcast_note, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /podcast_notes
   # GET /podcast_notes.json

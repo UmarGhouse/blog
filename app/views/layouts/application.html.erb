@@ -27,10 +27,17 @@
           <li class="nav-item">
             <%= link_to 'Podcast Notes', podcast_notes_path, class: 'nav-link' %>
           </li>
+          <% if current_user %>
+            <li class="nav-item">
+              <%= link_to new_post_path, class: 'nav-link', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Add New Post' do %>
+                <i class="fas fa-plus-circle"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to new_post_path, class: 'nav-link', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Add New Post' do %>
-              <i class="fas fa-plus-circle"></i>
-            <% end %>
+            <%= login_helper 'nav-link' %>
           </li>
         </ul>
       </div>
