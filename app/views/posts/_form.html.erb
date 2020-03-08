@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="custom-file">
+  <div class="custom-file mb-5">
     <%= form.file_field :hero_image, class: 'custom-file-input' %>
     <%= form.label :hero_image, class: 'custom-file-label' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
+  <div class="form-group mb-5">
+    <%= form.text_field :caption, class: 'form-control', placeholder: :caption %>
+  </div>
+
+  <div class="form-group mb-5">
+    <%= form.text_field :title, class: 'form-control', placeholder: :title %>
   </div>
 
   <div class="form-group">
-    <%= form.label :body %>
-    <%= form.rich_text_area :body, class: 'form-control' %>
+    <%= form.rich_text_area :body, class: 'form-control', placeholder: :body %>
   </div>
 
   <div class="form-group">

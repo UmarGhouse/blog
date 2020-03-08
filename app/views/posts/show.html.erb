@@ -15,7 +15,10 @@
 
 <% if @post.hero_image.attached? %>
   <div class="text-center">
-    <image src="<%= url_for(@post.hero_image) %>" class="img-fluid">
+    <figure>
+      <img src="<%= url_for(@post.hero_image) %>" class="img-fluid" />
+      <figcaption class="text-muted"><small><%= @post.caption %></small></figcaption>
+    </figure>
   </div>
 <% end %>
 
