@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="custom-file mb-5">
-    <%= form.file_field :hero_image, class: 'custom-file-input' %>
+    <%= form.file_field :hero_image, direct_upload: true %>
     <%= form.label :hero_image, class: 'custom-file-label' %>
   </div>
 
