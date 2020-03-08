@@ -5,10 +5,12 @@ import bsCustomFileInput from 'bs-custom-file-input';
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
+require("jquery/dist/jquery")
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("bootstrap/dist/js/bootstrap")
+require("easy-autocomplete/dist/jquery.easy-autocomplete")
 
 import LocalTime from "local-time"
 LocalTime.start()

@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- Font awesome -->
@@ -45,6 +46,10 @@
           <%= alerts(notice) %>
           <%= alerts(alert) %>
         </div>
+
+        <%= form_with url: search_path, local: true, method: :get, html: { class: "my-2 my-lg-0 mx-auto" } do |form| %>
+          <%= form.text_field :q, placeholder: "Search", data: { behavior: "autocomplete" }, class: "search form-control my-3 rounded-pill" %>
+        <% end %>
 
         <%= yield %>
       </div>

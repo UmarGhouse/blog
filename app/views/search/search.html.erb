@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1>Posts</h1>
+
+    <% @posts.each do |post| %>
+      <div class="row my-5">
+        <div class="col-sm-4 my-auto">
+          <% if post.hero_image.attached? %>
+            <div class="text-center">
+              <image src="<%= url_for(post.hero_image) %>" class="img-fluid">
+            </div>
+          <% end %>
+        </div>
+
+        <div class="col-sm-8 my-auto">
+          <h2><%= link_to post.title, post %></h2>
+          <p><%= truncate(strip_tags(post.body.to_s), length: 100) %></p>
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(post), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> | 
+          <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Delete' %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= paginate @posts %>
+  </div>
+
+  <div class="col-md-6">
+    <h1>Podcast Notes</h1>
+
+    <% @podcast_notes.each do |podcast_note| %>
+      <div class="row my-5">
+        <div class="col-sm-6 my-auto">
+          <h2><%= link_to podcast_note.title, podcast_note %></h2>
+        </div>
+
+        <div class="col-sm-6 my-auto">
+          <p><%= truncate(strip_tags(podcast_note.note_body.to_s), length: 200) %></p>
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_podcast_note_path(podcast_note), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> | 
+          <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, podcast_note, method: :delete, data: { confirm: 'Are you sure?' }, class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Delete' %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= paginate @podcast_notes %>
+  </div>
+</div>

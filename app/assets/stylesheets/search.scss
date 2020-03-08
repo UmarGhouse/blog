@@ -1,0 +1,11 @@
+input.search:focus {
+  box-shadow: 0.1em 0.2em 0.65em #c4c4c4;
+  transform: scale(1.025);
+  outline: none;
+
+  // Remove the scaling for those who don't want animation.
+  @media screen and (prefers-reduced-motion: reduce) {
+    box-shadow: none;
+    transform: none;
+  }
+}
