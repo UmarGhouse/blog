@@ -5,7 +5,7 @@
 <% end %>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <% @podcast_notes.each do |podcast_note| %>
       <div class="row my-5">
         <div class="col-sm-6">
@@ -24,9 +24,4 @@
 
     <%= paginate @podcast_notes %>
   </div>
-
- <div class="col-md-4">
-    <h1>Tags</h1>
-    
-  </div> 
 </div>
