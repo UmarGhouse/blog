@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @last_post = Post.last
-    @posts = Post.all_except_last.order('created_at DESC').page(params[:page])
+    if Post.last
+      @posts = Post.all_except_last.order('created_at DESC').page(params[:page])
+    end
     @posts_archive = Post.group_by_year(:created_at).count
   end
 
