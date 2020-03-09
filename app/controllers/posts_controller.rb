@@ -5,11 +5,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @last_post = Post.last
     if Post.last
+      @last_post = Post.last
       @posts = Post.all_except_last.order('created_at DESC').page(params[:page])
+      @posts_archive = Post.group_by_year(:created_at).count
+    else
+      redirect_to new_post_path
     end
-    @posts_archive = Post.group_by_year(:created_at).count
   end
 
   def archive
