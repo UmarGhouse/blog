@@ -37,6 +37,7 @@
 
 trix-editor {
   &.form-control {
+    min-height: 300px;
     height: auto;
   }
 }
@@ -50,7 +51,7 @@ trix-editor {
     width: 100%;
     text-align: center;
   }
-  
+
   .attachment {
     display: inline-block;
     position: relative;
