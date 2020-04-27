@@ -9,19 +9,19 @@
 <small class="text-muted"><i class="far fa-clock"></i> <%= local_time(@post.created_at, :short) %></small>
 
 <% if current_user %>
-  <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> | 
-  <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @post, method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip', placement: 'bottom' }, class: 'admin-controls', title: 'Delete' %>
+<%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(@post), class: 'admin-controls', data: { toggle: 'tooltip', placement: 'bottom' }, title: 'Edit' %> |
+<%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, @post, method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip', placement: 'bottom' }, class: 'admin-controls', title: 'Delete' %>
 <% end %>
 
 <br>
 
 <% if @post.hero_image.attached? %>
-  <div class="text-center">
-    <figure>
-      <img src="<%= url_for(@post.hero_image) %>" class="img-fluid" />
-      <figcaption class="text-muted"><small><%= @post.caption %></small></figcaption>
-    </figure>
-  </div>
+<div class="text-center">
+  <figure>
+    <img src="<%= url_for(@post.hero_image) %>" class="img-fluid" />
+    <figcaption class="text-muted"><small><%= @post.caption %></small></figcaption>
+  </figure>
+</div>
 <% end %>
 
 <br>

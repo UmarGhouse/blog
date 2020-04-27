@@ -37,6 +37,10 @@ h6 {
   text-transform: uppercase;
 }
 
+.trix-content {
+  min-width: 0;
+}
+
 .trix-content blockquote {
   position: relative;
   color: #a3a3a3;
